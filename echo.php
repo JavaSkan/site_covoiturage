@@ -6,7 +6,6 @@
     </head>
 
     <body>
-        <h1>Liste des voitures</h1>
         <ul>
         <?php
         /*$marque = 'OhPonyBoy';
@@ -37,8 +36,15 @@
             $voiture_3
         );
 
-        foreach ($voitures as $voiture) {
-            echo '<li>Voiture ' . $voiture['immatriculation'] . ' de marque ' . $voiture['marque'] . ' (couleur ' . $voiture['couleur'] . ')</li>';
+        if(empty($voitures)) {
+            echo '<p>Il n\'y a pas de voiture';
+        }else{
+            echo '<h1>Liste des voitures</h1>';
+            echo '<ul>';
+            foreach ($voitures as $voiture) {
+                echo '<li>Voiture ' . $voiture['immatriculation'] . ' de marque ' . $voiture['marque'] . ' (couleur ' . $voiture['couleur'] . ')</li>';
+            }
+            echo '</ul>';
         }
 
         ?>
